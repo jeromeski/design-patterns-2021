@@ -1,26 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { LeftComponent } from "./components/split-screen/LeftComponent";
-import { RightComponent } from "./components/split-screen/RightComponent";
-import SplitScreen from "./components/split-screen/SplitScreen";
-
-// function App() {
-// 	return (
-// 		<div className="App">
-// 			<SplitScreen left={LeftComponent} right={RightComponent} />
-// 		</div>
-// 	);
-// }
-
-// export default App;
+import SplitScreenOne from "./components/layout/SplitScreenOne";
+import SplitScreenTwo from "./components/layout/SplitScreenTwo";
 
 function App() {
 	return (
-		<div className="App">
-			<SplitScreen>
-				<LeftComponent name="LEFT" />
-				<RightComponent message="RIGHT" />
-			</SplitScreen>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/lesson-1a" element={<SplitScreenOne />} exact />
+				<Route path="/lesson-1b" element={<SplitScreenTwo />} exact />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
