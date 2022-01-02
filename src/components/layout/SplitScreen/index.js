@@ -13,6 +13,9 @@ const SplitScreen = ({ left: Left, right: Right, leftWeight = 0, rightWeight = 0
 	const [state, setState] = useState("");
 	const [left, right] = state;
 
+  console.count("SplitScreen :");
+	console.log(left, right, Left, Right);
+
 	useEffect(() => {
 		if (children) {
 			setState(children);

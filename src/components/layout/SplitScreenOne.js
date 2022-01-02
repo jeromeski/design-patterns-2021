@@ -4,6 +4,7 @@ import { LeftComponent } from "./SplitScreen/LeftComponent";
 import { RightComponent } from "./SplitScreen/RightComponent";
 
 const SplitScreenOne = () => {
+  console.count("SplitScreenOne :");
 	return (
 		<>
 			<SplitScreen left={LeftComponent} right={RightComponent} leftWeight={1} rightWeight={1} />
