@@ -10,15 +10,16 @@ const Pane = styled.div`
 `;
 
 const SplitScreen = ({ left: Left, right: Right, leftWeight = 0, rightWeight = 0, children }) => {
-	const [state, setState] = useState("");
-	const [left, right] = state;
+	const [components, setComponents] = useState([]);
 
-  console.count("SplitScreen :");
-	console.log(left, right, Left, Right);
+	const [leftComponent, rightComponent] = components;
+	console.log(components);
+	console.log(`Left Component :${leftComponent}, Right Component :${rightComponent}`);
+	console.log(Left, Right);
 
 	useEffect(() => {
 		if (children) {
-			setState(children);
+			setComponents(children);
 		}
 	}, [children]);
 
@@ -35,8 +36,8 @@ const SplitScreen = ({ left: Left, right: Right, leftWeight = 0, rightWeight = 0
 				</Fragment>
 			) : (
 				<Fragment>
-					<Pane weight={leftWeight}>{left}</Pane>
-					<Pane weight={rightWeight}>{right}</Pane>
+					<Pane weight={leftWeight}>{leftComponent}</Pane>
+					<Pane weight={rightWeight}>{rightComponent}</Pane>
 				</Fragment>
 			)}
 		</Container>
